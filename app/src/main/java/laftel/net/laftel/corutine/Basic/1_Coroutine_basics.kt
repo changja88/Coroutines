@@ -4,7 +4,7 @@ import kotlinx.coroutines.experimental.*
 
 
 // 1. GlobalScope
-fun main(args: Array<String>) {
+fun main0(args: Array<String>) {
     GlobalScope.launch {
         // launch new coroutine in background and continue
         delay(1000L) // non-blocking delay for 1 second (default time unit is ms)
@@ -33,7 +33,7 @@ fun main1(args: Array<String>) {
 //   따라서 runBlokcing으로 감싸야 Thread.sleep()과 같아진다
 
 // 3. runBlocking<Unit>{}
-fun main2(args: Array<String>) = runBlocking {
+fun main(args: Array<String>) = runBlocking {
     // start main coroutine
     GlobalScope.launch {
         // launch new coroutine in background and continue
@@ -74,7 +74,7 @@ fun main4(args: Array<String>) = runBlocking {
 // - launch 를 시키면 Job이 나온다
 
 // 6. coroutinScope{}
-fun main5(args: Array<String>) = runBlocking { // this: CoroutineScope
+fun main123123(args: Array<String>) = runBlocking { // this: CoroutineScope
     launch {
         delay(200L)
         println("Task from runBlocking")
